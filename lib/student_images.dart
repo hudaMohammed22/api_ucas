@@ -17,6 +17,7 @@ class _StudentImagesState extends State<StudentImages> {
           IconButton(onPressed: () {
             Navigator.push(context, MaterialPageRoute(builder: (context)=>UploadImage()));
           },
+
             icon: Icon(Icons.add))],
       ),
       body: FutureBuilder<List<ImageClass>>(
