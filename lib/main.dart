@@ -1,6 +1,8 @@
 import 'package:api_ucas/auth/login_screen.dart';
 import 'package:api_ucas/home_page.dart';
+import 'package:api_ucas/pojo/PorviderLang.dart';
 import 'package:api_ucas/provider_class.dart';
+import 'package:api_ucas/splash_screen.dart';
 import 'package:api_ucas/student_images.dart';
 import 'package:flutter/material.dart';
 import 'package:get_storage/get_storage.dart';
@@ -21,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(create: (context) => PorviderClass(),),
+        ChangeNotifierProvider(create: (context) => PorviderLang(),),
       ],
       child: MaterialApp(
         title: 'Flutter Demo',
@@ -36,8 +39,10 @@ class MyApp extends StatelessWidget {
           // is not restarted.
           primarySwatch: Colors.blue,
         ),
-          home: GetStorage().read("token") != null ?StudentImages():LoginScreen(),
+          home: SplashScreen()
       ),
     );
   }
 }
+
+

@@ -39,7 +39,7 @@ class AppTextField extends StatelessWidget {
       style: GoogleFonts.nunito(),
       decoration: InputDecoration(
         hintText: _hint,
-        hintStyle: GoogleFonts.nunito(),
+        hintStyle: GoogleFonts.tajawal(),
         prefixIcon: Icon(_prefixIcon),
         enabledBorder: buildOutlineInputBorder(color: const Color(0xFF54BAB9)),
         focusedBorder: buildOutlineInputBorder(color: const Color(0xFF18978F)),
