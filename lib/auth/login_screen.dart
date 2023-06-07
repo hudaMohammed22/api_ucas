@@ -6,8 +6,10 @@ import 'package:api_ucas/pojo/api_response.dart';
 import 'package:api_ucas/student_images.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:provider/provider.dart';
 
-
+import '../pojo/PorviderLang.dart';
 import '../widgets/app_text_field.dart';
 
 
@@ -44,7 +46,7 @@ class _LoginScreenState extends State<LoginScreen> {
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
-          "login",
+          "${AppLocalizations.of(context)!.login}",
           style: GoogleFonts.nunito(
             color: const Color(0xFF18978F),
             fontWeight: FontWeight.bold,
@@ -59,7 +61,7 @@ class _LoginScreenState extends State<LoginScreen> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              "login_title",
+              AppLocalizations.of(context)!.title,
               style: GoogleFonts.nunito(
                 fontWeight: FontWeight.bold,
                 fontSize: 28,
@@ -151,7 +153,9 @@ class _LoginScreenState extends State<LoginScreen> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Provider.of<PorviderLang>(context,listen: false).changLang();
+        },
         backgroundColor: const Color(0xFFE9DAC1),
         child: const Icon(
           Icons.language,

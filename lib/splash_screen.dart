@@ -16,7 +16,9 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     Future.delayed(Duration.zero,() async {
-      await Provider.of<PorviderClass>(context,listen: false).getData();
+      if(GetStorage().read("token") != null){
+        await Provider.of<PorviderClass>(context,listen: false).getData();
+      }
       Widget w = GetStorage().read("token") != null ?StudentImages():LoginScreen();
       Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => w,));
     },);
